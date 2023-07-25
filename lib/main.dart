@@ -120,20 +120,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     ..hiveStoragePath = path
                     ..namespace = 'android_test'
                     ..rootDomain = 'root.atsign.org'
-                    ..rootPort = 64
-                    ;
+                    ..rootPort = 64;
 
                   final AtOnboardingConfig atOnboardingConfig =
                       AtOnboardingConfig(
-                        atClientPreference: pref,
-                        rootEnvironment: RootEnvironment.Production,
-                        appAPIKey: "6550f543-1482-4425-a575-573a0c50ee75",
-                      );
+                    atClientPreference: pref,
+                    rootEnvironment: RootEnvironment.Production,
+                    domain: "root.atsign.org",
+                    appAPIKey: "6550f543-1482-4425-a575-573a0c50ee75",
+                  );
                   final AtOnboardingResult atOnboardingResult =
                       await AtOnboarding.onboard(
-                          context: context, 
-                          config: atOnboardingConfig
-                          );
+                          context: context, config: atOnboardingConfig);
                   print(atOnboardingResult);
                 },
                 child: const Text('click me!')),
